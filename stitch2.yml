@@ -1,0 +1,18 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  stitch2:
+    lang: gstpython-http-template
+    handler: ./stitch2
+    image: localhost:5000/stitch2:latest
+    environment:
+      read_timeout: 15m
+      exec_timeout: 15m
+      write_timeout: 15m
+    environment_file:
+      - env.yaml
+    environment:
+      GST_DEBUG: 3
+
