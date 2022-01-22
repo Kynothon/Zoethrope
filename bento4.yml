@@ -6,7 +6,7 @@ functions:
   bento4:
     lang: bento4-python-debian
     handler: ./bento4
-    image: localhost:5000/bento4:latest
+    image: ${IMAGE_REGISTRY:-docker.io}/bento4:latest
     environment:
       read_timeout: 15m
       exec_timeout: 15m

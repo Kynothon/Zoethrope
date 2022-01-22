@@ -6,7 +6,7 @@ functions:
   demux2:
     lang: gstrust-http-template
     handler: ./demux2
-    image: localhost:5000/demux2:latest
+    image: ${IMAGE_REGISTRY:-docker.io}/demux2:latest
     environment:
       read_timeout: 15m
       exec_timeout: 15m
